@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Coders - App Landing Page</title>
 
+		<!-- FontAwesome CSS -->
+		<link rel="stylesheet" href="css/font-awesome.css" />
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<!-- Main CSS -->
@@ -12,7 +14,7 @@
 	</head>
 	<body>
 		<!-- Navbar Start -->
-		<nav class="navbar navbar-expand-md">
+		<nav class="navbar navbar-expand-md fixed-top">
 			<div class="container">
 				<!-- Brand -->
 				<a class="navbar-brand" href="index.html">coders app</a>
@@ -54,6 +56,57 @@
 		</nav>
 		<!-- Navbar End -->
 
+		<!-- Home Section Start -->
+		<section class="home-section d-flex align-items-center">
+			<div class="effect-wrap">
+				<i class="fas fa-plus effect effect-1"></i>
+				<i class="fas fa-plus effect effect-2"></i>
+				<i class="fas fa-circle-notch effect effect-3"></i>
+			</div>
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-md-7">
+						<div class="home-text">
+							<h1>Best Mobile App Template for your Business</h1>
+							<p>
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
+								consequuntur harum perferendis deserunt nostrum deleniti
+								voluptate rem facere aspernatur possimus?
+							</p>
+						</div>
+						<div class="home-btn">
+							<a href="#" class="btn btn-1">download app</a>
+							<button type="button" class="btn btn-1 video-play-btn">
+								<i class="fas fa-play"></i>
+							</button>
+						</div>
+					</div>
+					<div class="col-md-5 text-center">
+						<div class="home-img">
+							<div class="circle"></div>
+							<img src="img/app-screenshots/1.png" alt="Coder App" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Home Section End -->
+
+		<!-- Video Popup Start -->
+		<div class="video-popup">
+			<div class="video-popup-inner">
+				<i class="fas fa-times video-popup-close"></i>
+				<div class="iframe-box">
+					<iframe
+						id="player-1"
+						src="https://www.youtube.com/embed/6fivjkF9BOo"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+			</div>
+		</div>
+		<!-- Video Popup End -->
 		<!-- jQuery JS -->
 		<script src="js/jquery.min.js"></script>
 		<!-- Proper JS -->
