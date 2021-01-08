@@ -1,7 +1,7 @@
 /* -----------
    Fonts
 ------------------------ */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* -----------
    Global CSS
@@ -23,12 +23,23 @@
 	--black-alpha-100: rgba(0, 0, 0, 0.05);
 }
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	overflow-x: hidden;
 	background-color: #ffffff;
 	line-height: 1.5;
+}
+body.dark {
+	background-color: var(--bg-dark);
+	--black-100: var(--bg-dark);
+	--black-000: var(--bg-dark);
+	--main-to-dark-color: var(--bg-dark);
+	--dark-to-main-color: var(--main-color);
+	--shadow-black-100: var(--shadow-black-300);
+	--black-alpha-100: rgba(255, 255, 255, 0.05);
+	--black-900: #ffffff;
+	--black-400: #bbbbbb;
 }
 * {
 	margin: 0;
@@ -49,8 +60,8 @@ ul {
 	border-radius: 30px;
 	color: var(--main-color);
 	font-size: 16px;
-	text-transform: capitalize;
 	transition: all 0.5s ease;
+	text-transform: capitalize;
 	box-shadow: var(--shadow-black-300);
 	font-weight: 500;
 }
@@ -149,6 +160,23 @@ ul {
 		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
 	}
 }
+@keyframes zoomInOut_01 {
+	0% {
+		transform: scale(0);
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+	}
+}
 /* -----------
    Effect Wrap
 ------------------------ */
@@ -176,6 +204,35 @@ ul {
 	font-size: 25px;
 	color: var(--color-3);
 	animation: bounceTop_01 3s linear infinite;
+}
+
+/* -----------
+   Preloader
+------------------------ */
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2100;
+	background-color: var(--main-to-dark-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.preloader span {
+	display: block;
+	height: 60px;
+	width: 60px;
+	background-color: var(--dark-to-main-color);
+	border-radius: 50%;
+	animation: zoomInOut_01 1s ease infinite;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	-webkit-animation: zoomInOut_01 1s ease infinite;
 }
 /* -----------
    Navbar
@@ -211,7 +268,7 @@ ul {
 	position: relative;
 }
 .navbar .nav-item .nav-link::before {
-	content: "";
+	content: '';
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -236,6 +293,7 @@ ul {
 	border-radius: 0 0 200px 0;
 	position: relative;
 	z-index: 1;
+	overflow-x: hidden;
 }
 .home-text h1 {
 	font-size: 45px;
@@ -291,7 +349,7 @@ ul {
 	transform: translate(-50%, -50%);
 }
 .home-img .circle::before {
-	content: "";
+	content: '';
 	position: absolute;
 	height: 60px;
 	width: 60px;
@@ -370,7 +428,7 @@ ul {
 }
 .features-section .feature-item::after,
 .features-section .feature-item::before {
-	content: "";
+	content: '';
 	position: absolute;
 	z-index: -1;
 	border-radius: 50%;
@@ -414,7 +472,7 @@ ul {
 	color: #ffffff;
 }
 .features-section .feature-item .icon::before {
-	content: "";
+	content: '';
 	position: absolute;
 	left: 100%;
 	top: 0;
@@ -540,7 +598,7 @@ ul {
 }
 .app-download-section::after {
 	position: absolute;
-	content: "";
+	content: '';
 	width: 100%;
 	height: 100%;
 	left: 0;
@@ -584,7 +642,7 @@ ul {
 	z-index: 1;
 }
 .how-it-works-item.line-right::before {
-	content: "";
+	content: '';
 	position: absolute;
 	height: 2px;
 	width: 100%;
@@ -796,8 +854,8 @@ ul {
 	position: relative;
 }
 .faq-section .accordion-header::before {
-	content: "\f067";
-	font-family: "Font Awesome 5 Free";
+	content: '\f067';
+	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
 	position: absolute;
 	height: 30px;
@@ -811,7 +869,7 @@ ul {
 	color: var(--black-400);
 }
 .faq-section .accordion-header:not(.collapsed)::before {
-	content: "\f068";
+	content: '\f068';
 	color: #ffffff;
 }
 .faq-section .accordion-header:not(.collapsed) {
@@ -954,8 +1012,117 @@ ul {
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* -----------
+   Toggle Theme - light and dark mode
+------------------------ */
+.toggle-theme {
+	position: fixed;
+	right: 0;
+	top: calc(50% - 20px);
+	height: 40px;
+	width: 40px;
+	background-color: var(--dark-to-main-color);
+	z-index: 1200;
+	color: #ffffff;
+	cursor: pointer;
+	box-shadow: var(--shadow-black-300);
+	font-size: 16px;
+	text-align: center;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+.toggle-theme i {
+	line-height: 40px;
+}
+
 /* ---------------------------- *************************** ----------------------------  */
 
 /* -----------
    Responsive
 ------------------------ */
+@media (max-width: 991px) {
+	.navbar-toggler {
+		background-color: var(--dark-to-main-color);
+		box-shadow: var(--shadow-black-300);
+		height: 34px;
+		width: 44px;
+		padding: 0;
+		font-size: 17px;
+		color: #ffffff;
+	}
+	.navbar-nav {
+		background-color: var(--dark-to-main-color);
+		box-shadow: var(--shadow-black-300);
+	}
+	.navbar .nav-item {
+		margin: 0;
+		padding: 5px 5px;
+	}
+	.navbar.navbar-shrink .navbar-toggler,
+	.navbar.navbar-shrink .navbar-nav {
+		background-color: var(--main-color);
+	}
+	.home-img .circle {
+		height: 320px;
+		width: 320px;
+	}
+	.home-img .circle::before {
+		left: 18px;
+		top: 18px;
+		transform-origin: 142px 142px;
+	}
+	.home-text h1 {
+		font-size: 40px;
+	}
+	.pricing-plan,
+	.how-it-works-item,
+	.app-download-item {
+		margin-bottom: 30px;
+	}
+	.how-it-works-item.line-right::before {
+		content: none;
+	}
+	.how-it-works-item {
+		box-shadow: var(--shadow-black-100);
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+	}
+	.footer-col {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.home-text {
+		margin-bottom: 80px;
+	}
+	.fun-facts-img {
+		margin-bottom: 30px;
+	}
+	.contact-form {
+		margin-top: 20px;
+	}
+	.section-title h2 {
+		font-size: 35px;
+	}
+	.fun-facts-section .section-title h2 {
+		text-align: center;
+	}
+}
+@media (max-width: 575px) {
+	.home-text h1 {
+		font-size: 30px;
+	}
+	.home-text p {
+		font-size: 16px;
+	}
+	.section-title h2 {
+		font-size: 30px;
+	}
+}

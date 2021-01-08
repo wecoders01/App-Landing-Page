@@ -3,6 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Favicon Icon -->
+		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+
+		<!-- Website Title -->
 		<title>WEcoders - App Landing Page</title>
 
 		<!-- OwlCarousel CSS -->
@@ -15,8 +19,14 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
+		<!-- Preloader Star -->
+		<div class="preloader">
+			<span></span>
+		</div>
+		<!-- Preloader End -->
+
 		<!-- Navbar Start -->
-		<nav class="navbar navbar-expand-md fixed-top">
+		<nav class="navbar navbar-expand-lg fixed-top">
 			<div class="container">
 				<!-- Brand -->
 				<a class="navbar-brand" href="index.html">WEcoders app</a>
@@ -28,7 +38,7 @@
 					data-toggle="collapse"
 					data-target="#collapsibleNavbar"
 				>
-					<span class="navbar-toggler-icon"></span>
+					<i class="fas fa-bars"></i>
 				</button>
 
 				<!-- Navbar links -->
@@ -79,14 +89,14 @@
 								consequuntur harum perferendis deserunt nostrum deleniti
 								voluptate rem facere aspernatur possimus?
 							</p>
-						</div>
-						<div class="home-btn">
-							<a href="#" data-scroll-goto="3" class="btn btn-1"
-								>download app</a
-							>
-							<button type="button" class="btn btn-1 video-play-btn">
-								<i class="fas fa-play"></i>
-							</button>
+							<div class="home-btn">
+								<a href="#" data-scroll-goto="3" class="btn btn-1"
+									>download app</a
+								>
+								<button type="button" class="btn btn-1 video-play-btn">
+									<i class="fas fa-play"></i>
+								</button>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-5 text-center">
@@ -462,7 +472,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row justify-content-center">
 					<div class="col-lg-4 col-md-6">
 						<div class="pricing-plan">
 							<div class="pricing-header">
@@ -843,6 +853,12 @@
 			</div>
 		</footer>
 		<!-- Footer Section End -->
+
+		<!-- Toggle Theme Start - light and dark mode -->
+		<div class="toggle-theme">
+			<i class="fas"></i>
+		</div>
+		<!-- Toggle Theme End -->
 
 		<!-- Video Popup Start -->
 		<div class="video-popup">
