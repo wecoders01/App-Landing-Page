@@ -102,6 +102,10 @@ $('.team-carousel').owlCarousel({
    }
 })
 
+/* ---------- ScrollIt ------------- */
+$.scrollIt({
+    topOffset: -50
+});
 
 
 
