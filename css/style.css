@@ -890,7 +890,7 @@ ul {
 	padding: 30px;
 	background-color: var(--black-100);
 }
-.faq-section.accordion-body p {
+.faq-section .accordion-body p {
 	font-weight: 300;
 	font-size: 16px;
 	color: var(--black-400);
